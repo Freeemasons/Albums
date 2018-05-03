@@ -1,0 +1,12 @@
+.App {
+}
+
+.App-album {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.App-header {
+  padding: 20px 0;
+  text-align: center;
+}
