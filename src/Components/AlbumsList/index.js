@@ -10,7 +10,7 @@ class AlbumsList extends Component {
   }
 
   componentDidMount() {
-    this.loadData()
+    // this.loadData()
   }
 
   loadData = () => {
@@ -48,6 +48,5 @@ class AlbumsList extends Component {
       )
   }
 }
-
 
 export default AlbumsList

@@ -1,0 +1,32 @@
+import React, { Component } from 'react'
+
+export default class RAP extends Component {
+
+  state = {
+    text: false
+  }
+
+  componentDidMount() {
+    this.textLoadHandler()
+  }
+
+  textLoadHandler = () => {
+    this.setState({text: true})
+  }
+
+  render() {
+    const { text } = this.state
+
+    if (text) {
+      return (
+        <div>Loading RAP</div>
+      )
+    }
+
+    return (
+      <div className='row'>
+        <div className='col-md-12'>Раздел /genre/rap</div>
+      </div>
+    )
+  }
+}
