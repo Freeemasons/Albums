@@ -1,0 +1,5 @@
+1. Create App.
+2. Load data using flags, cDM, render changes.
+3. Create Route v4, create links, paths.
+4. Create new links in Genre: Dnb, RAP, Rock using Route, Link
+5. Define in new music components function-helper in cDM to show progress (with text 'Loading $(genre name)').
