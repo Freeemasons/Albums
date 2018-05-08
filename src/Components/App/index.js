@@ -17,30 +17,30 @@ import { Route, Link } from 'react-router-dom'
 class App extends Component {
 
 
-  render () {
+	render () {
 
-    return(
-      <div className='App-header'>
-        <ul>
-          <li><Link to='/admin'>Admin</Link></li>
-          <li><Link to='/albums'>AlbumsList</Link></li>
-          <li><Link to='/genre'>Genre</Link></li>
-            <ul>
-              <li><Link to='/genre/d-n-b'>D'n'B</Link></li>
-              <li><Link to='/genre/rap'>RAP</Link></li>
-              <li><Link to='/genre/rock'>ROCK</Link></li>
-            </ul>
-        </ul>
-        <Route path="/admin" component={Admin}/>
-        <Route path="/albums" component={AlbumsList}/>
-        <Route path="/genre" component={Genre}/>
-        <Route path="/genre/d-n-b" component={Dnb}/>
-        <Route path="/genre/rap" component={RAP}/>
-        <Route path="/genre/rock" component={Rock}/>
-      </div>
-      )
-  }
+		return(
+			<div className='App-header'>
+				<ul className='App-ul'>
+					<li><Link to='/admin' className="App-link">Admin</Link></li>
+					<li><Link to='/albums' className="App-link">AlbumsList</Link></li>
+					<li><Link to='/genre' className="App-link">Genre</Link></li>
+					<ul className='App-ul'>
+						<li><Link to='/genre/d-n-b' className="App-link">D'n'B</Link></li>
+						<li><Link to='/genre/rap' className="App-link">RAP</Link></li>
+						<li><Link to='/genre/rock' className="App-link">ROCK</Link></li>
+					</ul>
+				</ul>
+				<Route path="/admin" component={Admin} />
+				<Route path="/albums" component={AlbumsList} />
+				<Route path="/genre" component={Genre} />
+				<Route path="/genre/d-n-b" component={Dnb} />
+				<Route path="/genre/rap" component={RAP} />
+				<Route path="/genre/rock" component={Rock} />
+			</div>
+		);
+	}
 }
 
 
-export default App
+export default App;

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './styles.css'
+
 export default class Dnb extends Component {
   state = {
     text: false
@@ -18,13 +20,13 @@ export default class Dnb extends Component {
 
     if (text) {
       return (
-        <div>Loading Drum'n'Base</div>
+        <div className='section'>Loading Drum'n'Base</div>
       )
     }
 
     return (
-      <div className='row'>
-        <div className='col-md-12'>Раздел /genre/d-n-b</div>
+      <div >
+        <div>Раздел /genre/d-n-b</div>
       </div>
     )
   }

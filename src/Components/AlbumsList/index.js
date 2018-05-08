@@ -36,13 +36,18 @@ class AlbumsList extends Component {
 
     const albumsList = albums.map(item=> {
       return <div key={item.id}>
-        <div>Title: {item.title}</div>
+        <div className='App-album'>Title: {item.title}</div>
       </div>
     })
 
     return(
-      <div>
-        <input type='button' value='Refresh' onClick={this.handleClick}/>
+      <div className='App-header'>
+        <input
+          type='button'
+          value='Refresh'
+          onClick={this.handleClick}
+          className='Button Button--orange'
+          />
         {albumsList}
       </div>
       )

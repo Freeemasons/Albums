@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './styles.css'
+
 export default class RAP extends Component {
 
   state = {
@@ -19,13 +21,13 @@ export default class RAP extends Component {
 
     if (text) {
       return (
-        <div>Loading RAP</div>
+        <div className='section'>Loading RAP</div>
       )
     }
 
     return (
-      <div className='row'>
-        <div className='col-md-12'>Раздел /genre/rap</div>
+      <div>
+        <div>Раздел /genre/rap</div>
       </div>
     )
   }

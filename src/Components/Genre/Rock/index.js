@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import './styles.css'
+
 export default class Rock extends Component {
   state = {
     text: false
@@ -18,13 +20,13 @@ export default class Rock extends Component {
 
     if (text) {
       return (
-        <div>Loading Rock</div>
+        <div className='section'>Loading Rock</div>
       )
     }
 
     return (
-      <div className='row'>
-        <div className='col-md-12'>Раздел /albums/rock</div>
+      <div>
+        <div>Раздел /albums/rock</div>
       </div>
     )
   }

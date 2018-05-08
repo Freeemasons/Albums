@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('https://i.gyazo.com/aa0bbb0b8c6b18c270b53d277acdba51.png');
+  font-family: helvetica, times, sans-serif;
+  color: #4d4d4d;
+  font-size: 20px;
+}
+
 .App {
 }
 
@@ -10,3 +20,41 @@
   padding: 20px 0;
   text-align: center;
 }
+
+.App-ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 1px;
+}
+
+.App-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.Button {
+  padding: 5px 10px;
+  font-size: 2em;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f88017;
+  color: #4d4d4d;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.Button:hover {
+  background-color: #fff;
+  color: #fff;
+}
+
+/* .Button--orange {
+  background-color: #f88017;
+  color: #fff;
+} */
+
+/* .Button--orange:hover {
+  background-color: #fff;
+  color: #4d4d4d;
+} */
