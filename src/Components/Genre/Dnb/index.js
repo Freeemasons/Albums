@@ -16,11 +16,12 @@ export default class Dnb extends Component {
   }
 
   render() {
+
     const { text } = this.state
 
     if (text) {
       return (
-        <div className='section'>Loading Drum'n'Base</div>
+        <div className='section'>{this.props.match.params.id}</div>
       )
     }
 
