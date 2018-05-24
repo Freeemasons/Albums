@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import './styles.css'
 
-export default class Dnb extends Component {
+class Dnb extends Component {
   state = {
     text: false
   }
@@ -16,7 +17,7 @@ export default class Dnb extends Component {
   }
 
   render() {
-
+    console.log(this.props.genres)
     const { text } = this.state
 
     if (text) {
@@ -32,3 +33,32 @@ export default class Dnb extends Component {
     )
   }
 }
+
+//так выглядит наш селектор
+//селектор - первый аргумент ф. коннект
+//другой аргумент - actions
+//третий аргумент - компонент
+
+const mapStateToProps = state => {
+  return {
+    genres: state.genres,
+  }
+}
+
+//function mapDispatchToProps(dispatch) {
+//  return {
+//    onLoadingGenreNames: bindActionCreators(onLoadingGenreNames, dispatch)
+//  }
+//}
+
+// const actions = {
+//   onLoadingGenreNames - что- то делает с именами
+// }
+
+//список жанров фетчиться по ссылке и записывается в genres
+//затем нам нужно обновить хранилище, видимо, так как экшен обновляет хранилище
+//нужен экшен, который загружает список жанров он берет их из state и обновляет хр
+//
+
+
+export default connect(mapStateToProps, null)(Dnb)
