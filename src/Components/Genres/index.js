@@ -4,35 +4,25 @@ import {
 	Link
 } from 'react-router-dom'
 
-import Dnb from '../Genre/Dnb'
+import Genre from '../Genres/Genre'
+import { connect } from 'react-redux'
 
 import './styles.css'
-import { connect } from 'react-redux'
 import { onLoadingGenreNames, loadGenres, setGenreHeader } from '../../GenreActions'
 
-class Genre extends Component {
+class Genres extends Component {
 	state = {
 		genres: [],
-		changeName:false
 	}
 
 	componentDidMount() {
 		this.props.loadGenres()
 	  }
 	  
-// 	  <li key={el.id}>
-// 	<Link
-// 		to={`${match.url}/${el.name}`}
-// 		className="App-link">
-// 		{el.name}
-// 	</Link>
-// </li>
-
 
 	renderLinks = () => {
 		const { match } = this.props
 		const template = this.props.genres.data.map((el) => {
-			console.log(el)
 			return (
 				<li key={el.id}>
 					<Link
@@ -43,24 +33,16 @@ class Genre extends Component {
 				</li>
 			)					
 		})
-		// return template
 		return template
 	}
 
 
-	handleGenreRefresh = () => {
-		this.setState({ changeName:true })
-	}
-
-	if (changeName) {
-		return (
-			this.props.setGenreHeader()
-		)
+	handleGenreRefresh = (a) => {
+		this.props.onSetGenreHeader(a)
 	}
 	
 	render() {
-		const { match, status, genres } = this.props
-		console.log(this.props.genres)
+		const { match, genres } = this.props
 
 		if (genres.isLoading) {
 			return (
@@ -74,14 +56,9 @@ class Genre extends Component {
 				<ul className='App-ul'>
 					{ this.renderLinks() }
 				</ul>
-				<Route path={`${match.url}/:id`} component={Dnb} />
-				<input
-					type='button'
-					value='Load Genre'
-					className='Button Button--orange'
-					onClick={this.handleGenreRefresh}
-				/>
-				
+				<Route path={`${match.url}/:id`} component={()=>{
+					return	<Genre setName={this.handleGenreRefresh}/>
+				}} />		
 			</div>
 		)
 	}
@@ -89,18 +66,16 @@ class Genre extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		// status: state.genres.isLoading,
 		genres: state.genres
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
-	return {loadGenres: ()=>(dispatch(loadGenres()))}
+	return {
+		loadGenres: ()=>(dispatch(loadGenres())),
+		onSetGenreHeader: (name) => (dispatch(setGenreHeader(name)))
+	}
 }
-
-// const mapDispatchToProps = (dispatch) => {
-// 	return { setGenreHeader: () => (dispatch(setGenreHeader())) }
-// }
 
 
 // const mapDispatchToProps = (dispatch) => {
@@ -109,4 +84,4 @@ const mapDispatchToProps = (dispatch) => {
 //   }))}
 // }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Genre)
+export default connect(mapStateToProps, mapDispatchToProps)(Genres)

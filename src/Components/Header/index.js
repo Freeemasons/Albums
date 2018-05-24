@@ -11,23 +11,9 @@ import { setGenreHeader } from '../../GenreActions'
 class Header extends Component {
 
     state ={
-        genreName:[],
         genreNameLoad:false
     }
 
-    componentDidMount() {
-        this.handleGenreNameChange()
-    }
-
-    handleGenreNameChange = () => {
-        this.setState({ genreNameLoad: true })
-    }
-
-
-    // { this.props.data.genre.name }
-
-
-    // { genreName ? 'Loading' : 'имя жанра' }
 
     if(genreNameLoad) {
         return (
@@ -38,11 +24,11 @@ class Header extends Component {
     render() {
         const { genreName } = this.state
         const { genres } = this.props
-
+        console.log(this.props)
 
         return (
             <div>
-                <h1> Was loaded { }
+                <h1> Was loaded {genres.genreNames}
                 </h1>
                 
             </div>
