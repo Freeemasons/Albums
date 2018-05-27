@@ -19,7 +19,6 @@ class Genres extends Component {
 		this.props.loadGenres()
 	  }
 	  
-
 	renderLinks = () => {
 		const { match } = this.props
 		const template = this.props.genres.data.map((el) => {

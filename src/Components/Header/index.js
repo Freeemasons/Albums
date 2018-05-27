@@ -43,10 +43,4 @@ class Header extends Component {
     }
 
 
-
 export default connect(mapStateToProps, null)(Header)
-
-
-
-//4 сделай кнопку, по нажатию на которую будет передаваться экшен, с именем, 
-//которое будет рисоваться в шапке. Данные по имени в шапке должны браться из редьюсера names

@@ -14,9 +14,6 @@ import {
 
 class App extends Component {
 
-	// { this.props.match.params.id }
-
-
 	render () {
 		return(
 			<div className='App-main'>
