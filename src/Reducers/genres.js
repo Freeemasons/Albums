@@ -1,10 +1,9 @@
 // import * as types from '../ActionTypes'
-import { LOADINGGENRES_REQUEST, LOADINGGENRES_SUCCESS, SET_GENRENAME } from '../ActionTypes'
+import { LOADINGGENRES_REQUEST, LOADINGGENRES_SUCCESS } from '../ActionTypes'
 
 const initialState = {
   isLoading: false,
   data: [],
-  genreNames: '',
   errorMsg: null,
 }
 
@@ -16,8 +15,6 @@ export default (state = initialState, action) => {
       return {...state, isLoading: true}
     case LOADINGGENRES_SUCCESS:
       return {...state, data:action.payload, isLoading: false}
-    case SET_GENRENAME:
-      return { ...state, genreNames: action.payload }
     default:
       return state
   }

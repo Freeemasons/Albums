@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import PT from 'prop-types'
+
 import { withRouter } from 'react-router'
 
 import './styles.css'
@@ -27,6 +29,10 @@ class Genre extends Component {
   }
 }
 
+Genre.propTypes = {
+  setNameHandler: PT.func.isRequired,
+  setName: PT.func.isRequired
+}
 
 
 export default withRouter(Genre)

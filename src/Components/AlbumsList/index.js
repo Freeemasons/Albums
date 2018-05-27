@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
 
-// import { Route, Link } from 'react-router-dom'
+import PT from 'prop-types'
 
 class AlbumsList extends Component {
 
   state = {
     albums: [],
     loading: false,
-  }
-
-  componentDidMount() {
-    // this.loadData()
   }
 
   loadData = () => {
@@ -52,6 +48,10 @@ class AlbumsList extends Component {
       </div>
       )
   }
+}
+
+AlbumsList.propTypes = {
+  handleClick: PT.func.isRequired
 }
 
 export default AlbumsList

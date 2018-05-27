@@ -4,11 +4,13 @@ import {
 	Link
 } from 'react-router-dom'
 
+import PT from 'prop-types'
+
 import Genre from '../Genres/Genre'
 import { connect } from 'react-redux'
 
 import './styles.css'
-import { onLoadingGenreNames, loadGenres, setGenreHeader } from '../../GenreActions'
+import { loadGenres, setGenreHeader } from '../../GenreActions'
 
 class Genres extends Component {
 	state = {
@@ -82,5 +84,19 @@ const mapDispatchToProps = (dispatch) => {
 //     type: LOADINGGENRES_REQUEST,
 //   }))}
 // }
+
+Genres.propTypes = {
+	genres: PT.object.isRequired,
+	handleGenreRefresh: PT.func.isRequired,
+	isLoading: PT.bool.isRequired,
+	loadGenres: PT.func.isRequired,
+	mapStateToProps: PT.func.isRequired,
+	mapDispatchToProps: PT.func.isRequired,
+	onSetGenreHeader: PT.func.isRequired,
+	renderLinks: PT.func.isRequired,
+	setGenreHeader: PT.string.isRequired,
+	setName: PT.func.isRequired
+}
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Genres)

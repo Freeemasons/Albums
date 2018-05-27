@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 
-import { connect } from 'react-redux'
-import {
-    Route,
-    Link
-} from 'react-router-dom'
+import PT from 'prop-types'
 
-import { setGenreHeader } from '../../GenreActions'
+import { connect } from 'react-redux'
 
 class Header extends Component {
 
@@ -22,13 +18,12 @@ class Header extends Component {
     }
 
     render() {
-        const { genreName } = this.state
-        const { genres } = this.props
+        const { header } = this.props
         console.log(this.props)
 
         return (
             <div>
-                <h1> Was loaded {genres.genreNames}
+                <h1> Was loaded {header.genreNames}
                 </h1>
                 
             </div>
@@ -38,9 +33,16 @@ class Header extends Component {
 
     const mapStateToProps = (state) => {
         return {
-            genres: state.genres
+            header: state.header,
         }
     }
 
+
+Header.propTypes = {
+    header: PT.object.isRequired,
+    genreNames: PT.string.isRequired,
+    genreNameLoad: PT.bool.isRequired,
+    loadGenres: PT.func.isRequired,
+}
 
 export default connect(mapStateToProps, null)(Header)

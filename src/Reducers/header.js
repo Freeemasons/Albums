@@ -1,10 +1,7 @@
 import { SET_GENRENAME } from '../ActionTypes'
 
 const initialState = {
-    isLoading: false,
-    data: [],
     genreNames: '',
-    errorMsg: null,
 }
 
 export default (state = initialState, action) => {

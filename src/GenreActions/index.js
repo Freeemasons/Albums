@@ -1,5 +1,7 @@
 import { LOADINGGENRES_REQUEST, LOADINGGENRES_SUCCESS, SET_GENRENAME } from '../ActionTypes'
 
+//Load genres actions
+
 export function onLoadingGenreNames() {
   return {
     type: LOADINGGENRES_REQUEST,
@@ -16,6 +18,8 @@ export function onLoadingGenreNames() {
        })
    }
  }
+
+ //Header changing action
 
 export function setGenreHeader(name) {
   return {
