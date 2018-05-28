@@ -1,15 +1,13 @@
 import { SET_GENRENAME } from '../actions/ActionTypes'
 
-const initialState = {
-    genreNames: '',
-}
+const initialState = ''
 
 export default (state = initialState, action) => {
     //{type:LOADINGGENRES_SUCCESS, payload:genres}
     switch (action.type) {
 
         case SET_GENRENAME:
-            return { ...state, genreNames: action.payload }
+            return action.payload
         default:
             return state
     }

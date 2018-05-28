@@ -30,7 +30,6 @@ class Genre extends Component {
 }
 
 Genre.propTypes = {
-  setNameHandler: PT.func.isRequired,
   setName: PT.func.isRequired
 }
 
