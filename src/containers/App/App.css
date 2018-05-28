@@ -1,14 +1,17 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  text-align: center;
   box-sizing: border-box;
   background-image: url('http://www.baltana.com/files/wallpapers-1/Blue-Shine-Wallpaper-00366.jpg');
-  font-family: helvetica, times, sans-serif;
+  font-family: sans-serif;
   color: #4d4d4d;
   font-size: 20px;
+  width: 300px;
 }
 
-.App {
+.App-header {
+  color: #C7CDD2;
 }
 
 .App-album {
@@ -16,9 +19,16 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-.App-main {
+/* .App-main {
   padding: 20px 0;
   text-align: center;
+} */
+
+.App-listItem {
+  font-family: sans-serif;
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px dotted grey;
 }
 
 .App-ul {
@@ -34,8 +44,9 @@ body {
 }
 
 .Button {
-  padding: 5px 10px;
+  padding: 5px 15px;
   font-size: 1em;
+  margin: 10px 10px;
   border: 0;
   border-radius: 5px;
   color: #fff;

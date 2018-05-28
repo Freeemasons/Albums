@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import App from './Components/App';
+import App from './containers/App';
 // import Home from '../Home'
 // import Genre from '../Genre'
 import { Provider } from 'react-redux'
 // import configureStore from '../configureStore'
-import reducer from './Reducers'
+import reducer from './reducers'
 
 import { BrowserRouter as Router } from 'react-router-dom'
 import { createStore, applyMiddleware } from 'redux';

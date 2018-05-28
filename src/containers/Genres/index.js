@@ -10,7 +10,7 @@ import Genre from '../Genres/Genre'
 import { connect } from 'react-redux'
 
 import './styles.css'
-import { loadGenres, setGenreHeader } from '../../GenreActions'
+import { loadGenres, setGenreHeader } from '../../actions/GenreActions'
 
 class Genres extends Component {
 	state = {
@@ -25,7 +25,7 @@ class Genres extends Component {
 		const { match } = this.props
 		const template = this.props.genres.data.map((el) => {
 			return (
-				<li key={el.id}>
+				<li className='App-listItem' key={el.id}>
 					<Link
 						to={`${match.url}/${el.name}`}
 						className="App-link">
@@ -53,7 +53,7 @@ class Genres extends Component {
 	
 			return (
 			<div>
-				<div className='section'>Раздел /genre</div>
+				<div className='section'>Sections</div>
 				<ul className='App-ul'>
 					{ this.renderLinks() }
 				</ul>

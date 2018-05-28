@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import './App.css'
 
-import Admin from '../Admin'
-import AlbumsList from '../AlbumsList'
+import Admin from '../../components/Admin'
+import AlbumsList from '../../components/AlbumsList'
 import Genres from '../Genres'
 import Header from '../Header'
 
@@ -19,13 +19,13 @@ class App extends Component {
 			<div className='App-main'>
 				<Header />
 				<ul className='App-ul'>
-					<li><Link to='/admin' className="App-link">Admin</Link></li>
-					<li><Link to='/albums' className="App-link">AlbumsList</Link></li>
-					<li><Link to='/genre' className="App-link">Genres</Link></li>
+					<li className='App-listItem'><Link to='/admin' className="App-link">Admin</Link></li>
+					<li className='App-listItem'><Link to='/albums' className="App-link">AlbumsList</Link></li>
+					<li className='App-listItem'><Link to='/genre' className="App-link">Genres</Link></li>
 				</ul>
 				<Route path="/admin" component={Admin} />
 				<Route path="/albums" component={AlbumsList} />
-				<Route path="/genre" component={Genres} />
+				<Route path="/genre" component={Genres} />		
 			</div>
 		);
 	}

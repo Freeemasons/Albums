@@ -1,5 +1,5 @@
 // import * as types from '../ActionTypes'
-import { LOADINGGENRES_REQUEST, LOADINGGENRES_SUCCESS } from '../ActionTypes'
+import { LOADINGGENRES_REQUEST, LOADINGGENRES_SUCCESS } from '../actions/ActionTypes'
 
 const initialState = {
   isLoading: false,

@@ -4,6 +4,8 @@ import PT from 'prop-types'
 
 import { connect } from 'react-redux'
 
+import './styles.css'
+
 class Header extends Component {
 
     state ={
@@ -22,7 +24,7 @@ class Header extends Component {
         console.log(this.props)
 
         return (
-            <div>
+            <div className='App-header'>
                 <h1> Was loaded {header.genreNames}
                 </h1>
                 

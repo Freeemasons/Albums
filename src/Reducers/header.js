@@ -1,4 +1,4 @@
-import { SET_GENRENAME } from '../ActionTypes'
+import { SET_GENRENAME } from '../actions/ActionTypes'
 
 const initialState = {
     genreNames: '',

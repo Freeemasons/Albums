@@ -17,7 +17,7 @@ class Genre extends Component {
 
     return (
       <div >
-        <div>Раздел /genre/d-n-b</div>
+        <div className='section'>Section /genre/d-n-b</div>
         <input
           type='button'
           value='Load Genre'
