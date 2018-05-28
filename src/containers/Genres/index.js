@@ -7,6 +7,7 @@ import {
 import PT from 'prop-types'
 
 import Genre from '../Genres/Genre'
+
 import { connect } from 'react-redux'
 
 import './styles.css'
@@ -41,6 +42,8 @@ class Genres extends Component {
 	handleGenreRefresh = (a) => {
 		this.props.onSetGenreHeader(a)
 	}
+
+	//написать новый роут /сонг /рап /айди
 	
 	render() {
 		const { match, genres } = this.props

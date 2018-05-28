@@ -15,15 +15,12 @@ class Genre extends Component {
   render() {
     console.log(this.props)
 
+    //список песен
+
     return (
       <div >
         <div className='section'>Section /genre/d-n-b</div>
-        <input
-          type='button'
-          value='Load Genre'
-          className='Button Button--orange'
-          onClick={this.setNameHandler}
-        />
+        
       </div>
     )
   }
