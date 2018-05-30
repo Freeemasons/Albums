@@ -3,9 +3,5 @@
     "react-app",
   ],
     "rules": {
-    "jsx-quotes": [
-      1,
-      "prefer-double"
-    ]
   }
 }
