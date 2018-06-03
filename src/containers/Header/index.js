@@ -13,7 +13,7 @@ class Header extends Component {
 
         return (
             <div className='App-header'>
-                <h1> Was loaded {header}
+                <h1> Music library {header}
                 </h1>
                 
             </div>

@@ -5,6 +5,7 @@ import './App.css'
 import Admin from '../../components/Admin'
 import Genres from '../Genres'
 import Header from '../Header'
+import Login from '../Login'
 
 import {
 	Route,
@@ -20,9 +21,11 @@ class App extends Component {
 				<ul className='.App-ul App-ul--menu'>
 					<li className='App-listItem'><Link to='/admin' className="App-link">Admin</Link></li>
 					<li className='App-listItem'><Link to='/genres' className="App-link">Genres</Link></li>
+					<li className='App-listItem'><Link to='/login' className="App-link">Log in</Link></li>
 				</ul>
 				<Route path="/admin" component={Admin} />
-				<Route path="/genres" component={Genres} />		
+				<Route path="/genres" component={Genres} />
+				<Route path="/login" component={Login} />		
 			</div>
 		);
 	}

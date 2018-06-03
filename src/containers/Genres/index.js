@@ -53,7 +53,7 @@ class Genres extends Component {
 			return (
 				<li className='App-listItem' key={el.id}>
 					<Link
-						to={`${match.url}/${el.video}`}
+						to={`${match.url}/${el.id}`}
 						className="App-link">
 						{el.video}
 					</Link>
