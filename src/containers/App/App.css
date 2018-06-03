@@ -8,6 +8,10 @@ body {
   color: #4d4d4d;
   font-size: 20px;
   width: 300px;
+
+  @media (min-width: 768px) { width: 750px; }
+  @media (min-width: 992px) { width: 970px; }
+  @media (min-width: 1200px) { width: 1140px; }
 }
 
 .App-header {
@@ -31,10 +35,19 @@ body {
   border-bottom: 1px dotted grey;
 }
 
+
+
 .App-ul {
   list-style-type: none;
   list-style-position: inside;
   padding: 1px;
+}
+
+.App-ul--menu {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  justify-content: center;
 }
 
 .App-link {

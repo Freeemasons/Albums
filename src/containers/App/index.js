@@ -17,12 +17,12 @@ class App extends Component {
 		return(
 			<div className='App-main'>
 				<Header />
-				<ul className='App-ul'>
+				<ul className='.App-ul App-ul--menu'>
 					<li className='App-listItem'><Link to='/admin' className="App-link">Admin</Link></li>
-					<li className='App-listItem'><Link to='/genre' className="App-link">Genres</Link></li>
+					<li className='App-listItem'><Link to='/genres' className="App-link">Genres</Link></li>
 				</ul>
 				<Route path="/admin" component={Admin} />
-				<Route path="/genre" component={Genres} />		
+				<Route path="/genres" component={Genres} />		
 			</div>
 		);
 	}

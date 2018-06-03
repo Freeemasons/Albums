@@ -1,4 +1,10 @@
-import { LOADINGGENRES_REQUEST, LOADINGGENRES_SUCCESS, SET_GENRENAME } from '../ActionTypes'
+import { 
+        LOADINGGENRES_REQUEST, 
+        LOADINGGENRES_SUCCESS, 
+        SET_GENRENAME,
+        LOADINGSONGLIST_REQUEST,
+        LOADINGSONGLIST_SUCCESS
+       } from '../ActionTypes'
 
 //Load genres actions
 
@@ -25,5 +31,46 @@ export function setGenreHeader(name) {
   return {
     type: SET_GENRENAME,
     payload: name
+  }
+}
+
+//songlistload
+
+export function onLoadingSongList() {
+  return {
+    type: LOADINGSONGLIST_REQUEST,
+  };
+}
+
+export function loadSonglistRap() {
+  return function (dispatch/*getState*/) {
+    dispatch(onLoadingSongList())
+    fetch('http://5af4686d04604e0014ea734b.mockapi.io/Rap')
+      .then(response => response.json())
+      .then(genre => {
+        dispatch({type: LOADINGSONGLIST_SUCCESS, payload:genre})
+      })
+  }
+}
+
+export function loadSonglistDnb() {
+  return function (dispatch/*getState*/) {
+    dispatch(onLoadingSongList())
+    fetch('http://5af4686d04604e0014ea734b.mockapi.io/Dnb')
+      .then(response => response.json())
+      .then(genre => {
+        dispatch({ type: LOADINGSONGLIST_SUCCESS, payload: genre })
+      })
+  }
+}
+
+export function loadSonglistRock() {
+  return function (dispatch/*getState*/) {
+    dispatch(onLoadingSongList())
+    fetch('http://5af4686d04604e0014ea734b.mockapi.io/Rock')
+      .then(response => response.json())
+      .then(genre => {
+        dispatch({ type: LOADINGSONGLIST_SUCCESS, payload: genre })
+      })
   }
 }

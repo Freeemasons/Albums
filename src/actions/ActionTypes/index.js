@@ -4,6 +4,15 @@ export const LOADINGGENRES_REQUEST = 'LOADINGGENRES_REQUEST'
 export const LOADINGGENRES_SUCCESS = 'LOADINGGENRES_SUCCESS'
 export const LOADINGGENRES_FAILURE = 'LOADINGGENRES_FAILURE'
 
-/* Seting genre.names */
+/* Loading Songlist */
+
+export const LOADINGSONGLIST_REQUEST = 'LOADINGSONGLIST_REQUEST'
+export const LOADINGSONGLIST_SUCCESS = 'LOADINGSONGLIST_SUCCESS'
+
+/* Setting genre.names */
 
 export const SET_GENRENAME = 'SET_GENRENAME'
+
+/* Setting songlist.names */
+
+export const SET_SONGLISTNAME = 'SET_SONGLISTNAME'

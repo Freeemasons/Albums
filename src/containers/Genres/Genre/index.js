@@ -8,9 +8,9 @@ import './styles.css'
 
 class Genre extends Component {
 
-  setNameHandler = () => {
-    this.props.setName(this.props.match.params.id)
-  }
+  // setNameHandler = () => {
+  //   this.props.setName(this.props.match.params.id)
+  // }
 
   render() {
     console.log(this.props)
@@ -19,8 +19,10 @@ class Genre extends Component {
 
     return (
       <div >
-        <div className='section'>Section /genre/d-n-b</div>
-        
+        <div className='section'>//список песен</div>
+        <ul>
+          {this.props.renderRapSongs}
+        </ul>
       </div>
     )
   }
