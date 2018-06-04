@@ -8,16 +8,13 @@ import PT from 'prop-types'
 
 import Genre from '../Genres/Genre'
 
-import RapSongs from '../RapSongs'
-
 import { connect } from 'react-redux'
 
 import './styles.css'
 import { loadGenres, 
 		setGenreHeader, 
-		loadSonglistDnb,
-		loadSonglistRap,
-		loadSonglistRock } from '../../actions/GenreActions'
+		loadSonglist
+		} from '../../actions/GenreActions'
 
 class Genres extends Component {
 	state = {
@@ -26,9 +23,6 @@ class Genres extends Component {
 
 	componentDidMount() {
 		this.props.loadGenres()
-		this.props.loadSonglistDnb()
-		this.props.loadSonglistRap()
-		this.props.loadSonglistRock()
 	  }
 	  
 	renderLinks = () => {
@@ -47,23 +41,6 @@ class Genres extends Component {
 		return template
 	}
 
-	renderRapSongs = () => {
-		const { match } = this.props
-		const rapSongs = this.props.genre.dataSongList.map((el) => {
-			return (
-				<li className='App-listItem' key={el.id}>
-					<Link
-						to={`${match.url}/${el.id}`}
-						className="App-link">
-						{el.video}
-					</Link>
-				</li>
-			)	
-		})
-		return rapSongs
-	}
-
-
 
 	// handleGenreRefresh = (a) => {
 	// 	this.props.onSetGenreHeader(a)
@@ -72,8 +49,7 @@ class Genres extends Component {
 	//написать новый роут /сонг /рап /айди
 	
 	render() {
-		const { match, genres, genre } = this.props
-		// console.log(match)
+		const { match, genres } = this.props
 
 		if (genres.isLoading) {
 			return (
@@ -97,7 +73,7 @@ class Genres extends Component {
 				<Route
 					path={`${match.url}/:id`}
 					component={() => {
-						return <Genre renderRapSongs={this.renderRapSongs()}/>
+						return <Genre />
 					}} />
 						
 			</Fragment>
@@ -107,18 +83,14 @@ class Genres extends Component {
 
 	const mapStateToProps = (state) => {
 		return {
-			genres: state.genres,
-			genre: state.genre
+			genres: state.genres
 		}
 	}
 
 	const mapDispatchToProps = (dispatch) => {
 		return {
 			loadGenres: ()=>(dispatch(loadGenres())),
-			onSetGenreHeader: (name) => (dispatch(setGenreHeader(name))),
-			loadSonglistRap: () => (dispatch(loadSonglistRap())),
-			loadSonglistDnb: () => (dispatch(loadSonglistDnb())),
-			loadSonglistRock: () => (dispatch(loadSonglistRock())),
+			onSetGenreHeader: (name) => (dispatch(setGenreHeader(name)))
 		}
 	}
 
@@ -133,11 +105,6 @@ class Genres extends Component {
 		genres: PT.shape({
 			isLoading: PT.bool.isRequired,
 			data: PT.array.isRequired,
-			errorMsg: PT.string,
-		}).isRequired,
-		genre: PT.shape({
-			isLoading: PT.bool.isRequired,
-			dataSongList: PT.array.isRequired,
 			errorMsg: PT.string,
 		}).isRequired,
 		loadGenres: PT.func.isRequired,

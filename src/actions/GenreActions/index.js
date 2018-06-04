@@ -42,35 +42,13 @@ export function onLoadingSongList() {
   };
 }
 
-export function loadSonglistRap() {
+export function loadSonglist(genreName) {
   return function (dispatch/*getState*/) {
     dispatch(onLoadingSongList())
-    fetch('http://5af4686d04604e0014ea734b.mockapi.io/Rap')
+    fetch('http://5af4686d04604e0014ea734b.mockapi.io/' + genreName)
       .then(response => response.json())
       .then(genre => {
         dispatch({type: LOADINGSONGLIST_SUCCESS, payload:genre})
-      })
-  }
-}
-
-export function loadSonglistDnb() {
-  return function (dispatch/*getState*/) {
-    dispatch(onLoadingSongList())
-    fetch('http://5af4686d04604e0014ea734b.mockapi.io/Dnb')
-      .then(response => response.json())
-      .then(genre => {
-        dispatch({ type: LOADINGSONGLIST_SUCCESS, payload: genre })
-      })
-  }
-}
-
-export function loadSonglistRock() {
-  return function (dispatch/*getState*/) {
-    dispatch(onLoadingSongList())
-    fetch('http://5af4686d04604e0014ea734b.mockapi.io/Rock')
-      .then(response => response.json())
-      .then(genre => {
-        dispatch({ type: LOADINGSONGLIST_SUCCESS, payload: genre })
       })
   }
 }
