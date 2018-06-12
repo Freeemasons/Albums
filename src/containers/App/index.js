@@ -10,7 +10,8 @@ import Login from '../Login'
 
 import {
 	Route,
-	Link
+	Link,
+	Switch
 } from 'react-router-dom'
 
 class App extends Component {

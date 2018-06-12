@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+
 import {
 	Route,
 	Link
@@ -11,9 +12,7 @@ import Genre from '../Genres/Genre'
 import { connect } from 'react-redux'
 
 import './styles.css'
-import { loadGenres, 
-		setGenreHeader, 
-		loadSonglist
+import { loadGenres
 		} from '../../actions/GenreActions'
 
 class Genres extends Component {
@@ -41,27 +40,16 @@ class Genres extends Component {
 		return template
 	}
 
-
-	// handleGenreRefresh = (a) => {
-	// 	this.props.onSetGenreHeader(a)
-	// }
-
-	//написать новый роут /сонг /рап /айди
 	
 	render() {
 		const { match, genres } = this.props
 
 		if (genres.isLoading) {
 			return (
-				<div>Loading</div>
+				<div>Loading Genres</div>
 			)
 		}
 	
-		// <Route
-		// 	path="rap/rapSongs"
-		// 	component={() => {
-		// 		return <RapSongs renderRapSongs={this.renderRapSongs()} />
-		// 	}} />
 
 		return (
 			<Fragment>
@@ -90,16 +78,8 @@ class Genres extends Component {
 	const mapDispatchToProps = (dispatch) => {
 		return {
 			loadGenres: ()=>(dispatch(loadGenres())),
-			onSetGenreHeader: (name) => (dispatch(setGenreHeader(name)))
 		}
 	}
-
-
-// const mapDispatchToProps = (dispatch) => {
-// 	return {loadGenres: ()=>(dispatch({
-//     type: LOADINGGENRES_REQUEST,
-//   }))}
-// }
 
 	Genres.propTypes = {
 		genres: PT.shape({
@@ -107,8 +87,7 @@ class Genres extends Component {
 			data: PT.array.isRequired,
 			errorMsg: PT.string,
 		}).isRequired,
-		loadGenres: PT.func.isRequired,
-		onSetGenreHeader: PT.func.isRequired,
+		loadGenres: PT.func.isRequired
 	}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Genres)

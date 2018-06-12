@@ -14,12 +14,15 @@ import {
   loadSonglist
 } from '../../../actions/GenreActions'
 
-import './styles.css'
+// import Song from '../../Song'
+
+import '../../App/App.css'
 
 class Genre extends Component {
 
   componentDidMount() {
     this.props.loadSonglist(this.props.match.params.id)
+    
   }
 
   renderSongs = () => {
@@ -39,16 +42,16 @@ class Genre extends Component {
   }
 
   render() {
-    console.log(this.props)
-
-    //список песен
 
     return (
       <div >
-        <div className='section'>//список песен</div>
-        <ul>
+        <div className='section'>
+          //список песен
+        </div>
+        <ul className='App-ul'>
           {this.renderSongs()}
         </ul>
+        
       </div>
     )
   }
