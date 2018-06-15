@@ -19,7 +19,7 @@ export function onLoadingGenreNames() {
  export function loadGenres() {
    return function (dispatch/*getState*/) {
      dispatch(onLoadingGenreNames())
-     fetch('https://5af4686d04604e0014ea734b.mockapi.io/genre-list')
+     return fetch('https://5af4686d04604e0014ea734b.mockapi.io/genre-list')
        .then(response => response.json())
        .then(genres => {
          dispatch({type:LOADINGGENRES_SUCCESS, payload:genres})

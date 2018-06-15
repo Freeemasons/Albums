@@ -46,7 +46,7 @@ class Genre extends Component {
     return (
       <div >
         <div className='section'>
-          //список песен
+          список песен
         </div>
         <ul className='App-ul'>
           {this.renderSongs()}

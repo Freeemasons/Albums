@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
     switch (action.type) {
 
         case LOADINGSONGLIST_REQUEST:
-            return { ...state, isLoading: true }
+            return { ...state, isLoading: true, errorMsg: null }
         case LOADINGSONGLIST_SUCCESS:
             return { ...state, dataSongList: action.payload, isLoading: false }
         default:

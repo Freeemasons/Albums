@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
 
     case LOADINGGENRES_REQUEST:
-      return {...state, isLoading: true}
+      return { ...state, isLoading: true, errorMsg: null}
     case LOADINGGENRES_SUCCESS:
       return {...state, data:action.payload, isLoading: false}
     default:

@@ -18,20 +18,16 @@ import '../App/App.css'
 
 import "../../../node_modules/video-react/dist/video-react.css"
 
-import { Player } from 'video-react';
-
 class Song extends Component {
 
     componentDidMount() {
         const { genre, songId } = this.props.match.params
         this.props.loadSongInfo(genre, songId)
         
-        // this.props.loadSongInfo(this.props.match.params.genre.songId)
-        
     }
 
     SongsInfo = () => {
-        const { match, song } = this.props
+        const { song } = this.props
         console.log(this.props)
         const mySong = song.dataSongInfo.map((el) => {
             return (
@@ -50,27 +46,9 @@ class Song extends Component {
         return mySong
     }
 
-//     <Player
-//     playsInline
-//     poster="/assets/poster.png"
-//     src={el.video}
-// />
-//     <Link
-//     to={`${match.url}/${el.id}`}
-//     className="App-link">
-    
-//     {el.text}
-// </Link>
-
-// у каждой песни при переходе есть свой уникальный match.url 
-// в нем отражается путь, genre: songId: который прописан в главном компоненте роутов
-// это приходит в params
-// не совсем понятно, как передать оба этих параметра, мы передавали только 1
-// - надо как-то связать это с выгрузкой массива, что когда ты нажал, как-то подцепилась именно та песня
-
     render() {
 
-        const { match, song } = this.props
+        const { song } = this.props
 
         if (song.isLoading) {
             return (
