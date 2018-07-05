@@ -76,9 +76,6 @@ class Login extends Component {
         return true
     }
 
-   
-
-    // как-то сделать файнд индекс
 
     render() {
         const { pass, login, error_pass, error_login } = this.state
