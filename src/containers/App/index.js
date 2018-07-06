@@ -6,7 +6,7 @@ import Admin from '../../components/Admin'
 import Genres from '../Genres'
 import Song from '../Song'
 import Header from '../Header'
-import Login from '../Login'
+import LoginContainer from '../../containers/LoginContainer' 
 
 import {
 	Route,
@@ -27,7 +27,7 @@ class App extends Component {
 				<Route path="/admin" component={Admin} />
 				<Route path="/genres" component={Genres} />
 				<Route path="/genres/:genre/:songId" component={Song} />
-				<Route path="/login" component={Login} />		
+				<Route path="/login" component={LoginContainer} />		
 			</div>
 		);
 	}

@@ -20,3 +20,8 @@ export const SET_GENRENAME = 'SET_GENRENAME'
 
 export const SET_SONGLISTNAME = 'SET_SONGLISTNAME'
 
+/*registration form */
+
+export const LOGIN_REQUEST = 'LOGIN_REQUEST'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+
